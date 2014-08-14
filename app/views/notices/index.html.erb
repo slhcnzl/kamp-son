@@ -1,21 +1,28 @@
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Başlık</th>
-      <th>İlan</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>
+     Yayındaki İlanlar
+   </h4>
+  </div>
+  <div class="panel-body">
     <% @notices.each do |notice| %>
-      <tr>
-        <td><%= notice.title %></td>
-        <td><%= notice.message %></td>
-        <td><%= link_to 'Görüntüle', notice_path(notice) %></td>
-        <td><%= link_to 'Düzenle', edit_notice_path(notice) %></td>
-        <td><%= link_to '', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="row">
+        <div class="col-md-1 col-sm-1">
+          <img src="http://lorempixel.com/50/50/">
+        </div>
+        <div class="col-md-11 col-sm-11">
+          <div class="notice">
+            <strong><%= link_to notice.title, notice_path(notice) %></strong>
+            <div class="meta">
+              <%= link_to time_ago_in_words(notice.created_at) + " önce", notice %> 
+              <span class="admin">
+                | <%= link_to 'Düzenle', edit_notice_path(notice) %> | 
+                <%= link_to "Sil", notice, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>

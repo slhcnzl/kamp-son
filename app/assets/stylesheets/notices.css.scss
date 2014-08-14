@@ -1,3 +1,12 @@
-// Place all the styles related to the notices controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.notice {
+  border-bottom: solid 1px #CCC;
+  padding: 5px 0;
+}
+
+.notice p {
+  margin: 4px 0;
+}
+
+.notice.hover {
+  background: #FAFAFA;
+}

@@ -1,3 +1,20 @@
-<%= render 'form' %>
-
-<%= link_to 'Back', notices_path %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>
+     Yeni İlan Oluştur
+   </h4>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="container">
+        <%= render 'form' %>
+      </div>
+    </div>
+    <hr \>
+    <div class="row">
+      <div class="container">
+        <%= link_to '<= Geri Dön', notices_path, :class => "btn btn-sm btn-default" %>
+      </div>
+    </div>
+  </div>
+</div>
