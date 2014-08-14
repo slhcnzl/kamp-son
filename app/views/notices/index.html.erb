@@ -1,0 +1,21 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Başlık</th>
+      <th>İlan</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @notices.each do |notice| %>
+      <tr>
+        <td><%= notice.title %></td>
+        <td><%= notice.message %></td>
+        <td><%= link_to 'Görüntüle', notice_path(notice) %></td>
+        <td><%= link_to 'Düzenle', edit_notice_path(notice) %></td>
+        <td><%= link_to '', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

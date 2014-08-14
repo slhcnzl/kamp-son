@@ -1,0 +1,5 @@
+ <%= simple_form_for(@notice) do |f| %>
+    <%= f.input :title, label: "Başlık:", hint: "Boş geçmeyiniz!", placeholder: "Lütfen başlık giriniz!" %>
+    <%= f.input :message, label: "İlan İçeriği" %>
+    <%= f.button :submit, "Gönder" %>
+<% end %>
