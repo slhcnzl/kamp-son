@@ -14,11 +14,13 @@
           <div class="notice">
             <strong><%= link_to notice.title, notice_path(notice) %></strong>
             <div class="meta">
-              <%= link_to time_ago_in_words(notice.created_at) + " önce", notice %> 
-              <span class="admin">
-                | <%= link_to 'Düzenle', edit_notice_path(notice) %> | 
-                <%= link_to "Sil", notice, method: :delete, data: { confirm: 'Are you sure?' } %>
-              </span>
+              <%= link_to time_ago_in_words(notice.created_at) + " önce", notice %>
+              <% if user_signed_in? %>
+	              <span class="admin">
+	                | <%= link_to 'Düzenle', edit_notice_path(notice) %> | 
+	                <%= link_to "Sil", notice, method: :delete, data: { confirm: 'Are you sure?' } %>
+	              </span>
+	          <% end %>
             </div>
           </div>
         </div>

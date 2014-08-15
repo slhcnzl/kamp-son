@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :users
+  devise_scope :user do
+	get 'register', to: 'devise/registrations#new', as: :register
+	get 'login', to: 'devise/sessions#new', as: :login
+	get 'update', to: 'devise/registrations#edit', as: :update
+	get 'logout', to: 'devise/sessions#destroy', as: :logout
+	get 'recover', to: 'devise/passwords#new', as: :recover
+  end
+
   resources :notices
 
   # The priority is based upon order of creation: first created -> highest priority.

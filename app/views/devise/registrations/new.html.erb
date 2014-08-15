@@ -1,0 +1,20 @@
+<h2>Kayıt Ol</h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email, :required => true, :autofocus => true, label: "E-mail Adresiniz" %>
+    <%= f.input :password, :required => true, label: "Şifreniz" %>
+    <%= f.input :password_confirmation, :required => true, label: "Şifreniz (tekrar)" %>
+    <%= f.input :first_name, label: "Adınız" %>
+    <%= f.input :last_name, label: "Soyadınız" %>
+  </div>
+
+  <div class="form-actions">
+  	<p \>
+    <%= f.button :submit, "Kayıt Ol" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
