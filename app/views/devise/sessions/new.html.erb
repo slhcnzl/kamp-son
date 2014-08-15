@@ -1,15 +1,36 @@
-<h2>Sign in</h2>
+<h2>Giriş Yap</h2>
 
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, :required => false, :autofocus => true %>
-    <%= f.input :password, :required => false %>
-    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign in" %>
-  </div>
+<div class="container">
+  <table class="table table-hover">
+    <tr>
+      <td>
+        <%= f.input :email, :required => false, :autofocus => true, label: "E-mail Adresiniz" %>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <%= f.input :password, :required => false, label: "Şifreniz" %>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <%= f.input :remember_me, inline_label: "Beni hatırla", label: false, :as => :boolean if devise_mapping.rememberable? %>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <%= f.button :submit, "Giriş Yap", :class => "btn btn-sm btn-primary" %>
+      </td>
+    </tr>
+    
+    <tr>
+      <td><%= link_to "Kayıt Ol", new_registration_path(resource_name) %> | <%= link_to "Şifremi unuttum!", new_password_path(resource_name) %>
+      </td>
+    </tr>
+  </table>
+</div>
 <% end %>
-
-<%= render "devise/shared/links" %>
