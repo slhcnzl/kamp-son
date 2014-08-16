@@ -2,4 +2,5 @@
 
 class Notice < ActiveRecord::Base
   validates :title, :message, presence: true
+  belongs_to :user
 end

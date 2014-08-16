@@ -23,7 +23,12 @@ mattis, nec rhoncus libero dictum. Maecenas euismod lorem sodales sagittis aliqu
 tempus rutrum, nibh lacus hendrerit sem, non ullamcorper ipsum ipsum non lectus. Ut pellentesque condimentum
 quam sit amet tincidunt. Suspendisse potenti. Donec hendrerit suscipit velit, eu pulvinar tortor dictum eget."
 
+
+User.delete_all
+User.create(email: "msdundars@gmail.com", password: "12345678", first_name: "Mustafa Serhat", last_name: "Dündar")
+User.create(email: "irfan.subas@uzem.omu.edu.tr", password: "12345678", first_name: "İrfan", last_name: "Subaş")
+
 Notice.delete_all
-Notice.create(title: "Logitech HD Pro Webcam C920", message: lorem)
-Notice.create(title: "Mikado MD-V6S 2+1 Multimedia Speaker", message: lorem)
-Notice.create(title: "HP LaserJet Pro 400 Yazıcı M401dn", message: lorem)
+Notice.create(title: "Logitech HD Pro Webcam C920", message: lorem, user_id: User.find_by(email: "msdundars@gmail.com").id)
+Notice.create(title: "Mikado MD-V6S 2+1 Multimedia Speaker", message: lorem, user_id: User.find_by(email: "msdundars@gmail.com").id)
+Notice.create(title: "HP LaserJet Pro 400 Yazıcı M401dn", message: lorem, user_id: User.find_by(email: "irfan.subas@uzem.omu.edu.tr").id)

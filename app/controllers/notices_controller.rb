@@ -20,13 +20,14 @@ class NoticesController < ApplicationController
 
   # GET /notices/1/edit
   def edit
+    redirect_to root_path unless is_permitted?
   end
 
   # POST /notices
   # POST /notices.json
   def create
     @notice = Notice.new(notice_params)
-
+    @notice.user = current_user
     respond_to do |format|
       if @notice.save
         format.html { redirect_to @notice, notice: 'Notice was successfully created.' }
@@ -66,6 +67,10 @@ class NoticesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_notice
       @notice = Notice.find(params[:id])
+    end
+
+    def is_permitted?
+      @notice.user_id == current_user.id
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
