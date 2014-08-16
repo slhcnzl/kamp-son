@@ -21,6 +21,8 @@ tr:
       invalid_token: 'Geçesiz onaylama kodu.'
       timeout: 'Oturumunuz sona erdi. Devam etmek için lütfen giriş yapın.'
       inactive: 'Hesabınız henüz etkinleştirilmedi.'
+      user:
+        not_found_in_database: "Böyle bir kullanıcı bulunamadı veya şifrenizi yanlış girdiniz."
     sessions:
       signed_in: 'Başarılı giriş.'
       signed_out: 'Başarılı çıkış.'

@@ -1,20 +1,49 @@
 <h2>Kayıt Ol</h2>
 
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<div class="container">
+  <table class="table table-hover">
+    <tr>
+      <td>
+        <%= f.input :email, :required => true, :autofocus => true, label: "E-mail Adresiniz" %>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <%= f.input :password, :required => true, label: "Şifreniz" %>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <%= f.input :password_confirmation, :required => true, label: "Şifreniz (tekrar)" %>
+      </td>
+    </tr>
 
-  <div class="form-inputs">
-    <%= f.input :email, :required => true, :autofocus => true, label: "E-mail Adresiniz" %>
-    <%= f.input :password, :required => true, label: "Şifreniz" %>
-    <%= f.input :password_confirmation, :required => true, label: "Şifreniz (tekrar)" %>
-    <%= f.input :first_name, label: "Adınız" %>
-    <%= f.input :last_name, label: "Soyadınız" %>
-  </div>
+    <tr>
+      <td>
+        <%= f.input :first_name, label: "Adınız" %>
+      </td>
+    </tr>
 
-  <div class="form-actions">
-  	<p \>
-    <%= f.button :submit, "Kayıt Ol" %>
-  </div>
+    <tr>
+      <td>
+        <%= f.input :last_name, label: "Soyadınız" %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <%= f.button :submit, "Kayıt Ol", :class => "btn btn-sm btn-primary" %>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <%= link_to "Giriş Yap", new_session_path(resource_name) %> | <%= link_to "Şifremi unuttum!", new_password_path(resource_name) %>
+      </td>
+    </tr>
+  </table>
+</div>
 <% end %>
-
-<%= render "devise/shared/links" %>
