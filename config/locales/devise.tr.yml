@@ -24,8 +24,8 @@ tr:
       user:
         not_found_in_database: "Böyle bir kullanıcı bulunamadı veya şifrenizi yanlış girdiniz."
     sessions:
-      signed_in: 'Başarılı giriş.'
-      signed_out: 'Başarılı çıkış.'
+      signed_in: 'Başarılı giriş yaptınız.'
+      signed_out: 'Başarılı çıkış yaptınız.'
     passwords:
       send_instructions: 'Bir kaç dakika içinde parolanızı nasıl sıfırlayacağız hakkında bir email alacaksınız.'
       updated: 'Parolanız başarıyla değiştirildi. Şu anda giriş yapmış bulunuyorsunuz.'
