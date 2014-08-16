@@ -1,66 +1,48 @@
+# encoding: utf-8
+
 class NoticesController < ApplicationController
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
-  # GET /notices
-  # GET /notices.json
   def index
     @notices = Notice.all
   end
 
-  # GET /notices/1
-  # GET /notices/1.json
+
   def show
   end
 
-  # GET /notices/new
   def new
     @notice = Notice.new
   end
 
-  # GET /notices/1/edit
-  def edit
-    redirect_to root_path unless is_permitted?
-  end
-
-  # POST /notices
-  # POST /notices.json
   def create
     @notice = Notice.new(notice_params)
     @notice.user = current_user
-    respond_to do |format|
-      if @notice.save
-        format.html { redirect_to @notice, notice: 'Notice was successfully created.' }
-        format.json { render :show, status: :created, location: @notice }
-      else
-        format.html { render :new }
-        format.json { render json: @notice.errors, status: :unprocessable_entity }
-      end
+    if @notice.save
+      redirect_to @notice, notice: 'İlan başarıyla oluşturuldu!'
+    else
+      render :new
     end
   end
 
-  # PATCH/PUT /notices/1
-  # PATCH/PUT /notices/1.json
+  def edit
+    (redirect_to root_path, alert: "Yetkisiz erişim!") unless is_permitted?
+  end
+
   def update
-    respond_to do |format|
-      if @notice.update(notice_params)
-        format.html { redirect_to @notice, notice: 'Notice was successfully updated.' }
-        format.json { render :show, status: :ok, location: @notice }
-      else
-        format.html { render :edit }
-        format.json { render json: @notice.errors, status: :unprocessable_entity }
-      end
+    redirect_to root_path, alert: "Yetkisiz erişim!" and return false unless is_permitted?
+    if @notice.update(notice_params)
+      redirect_to @notice, notice: 'İlan başarıyla güncellendi!'
+    else
+      render :edit
     end
   end
 
-  # DELETE /notices/1
-  # DELETE /notices/1.json
   def destroy
+    redirect_to root_path, alert: "Yetkisiz erişim!" and return false unless is_permitted?
     @notice.destroy
-    respond_to do |format|
-      format.html { redirect_to notices_url, notice: 'Notice was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to notices_url, notice: 'İlan başarıyla silindi!'
   end
 
   private
