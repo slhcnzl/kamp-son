@@ -27,7 +27,7 @@ class NoticesController < ApplicationController
   end
 
   def edit
-    (redirect_to root_path, alert: "Yetkisiz erişim!") unless is_permitted?
+    redirect_to root_path, alert: "Yetkisiz erişim!" unless is_permitted?
   end
 
   def update
@@ -40,7 +40,7 @@ class NoticesController < ApplicationController
   end
 
   def destroy
-    redirect_to root_path, alert: "Yetkisiz erişim!" and return false unless is_permitted?
+    redirect_to root_path, alert: "Yetkisiz Erişim!" and return false unless is_permitted?
     @notice.destroy
     redirect_to notices_url, notice: 'İlan başarıyla silindi!'
   end
@@ -52,7 +52,7 @@ class NoticesController < ApplicationController
     end
 
     def is_permitted?
-      @notice.user_id == current_user.id
+      current_user == @notice.user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
