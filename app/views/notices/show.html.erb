@@ -7,7 +7,6 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <div class="container">
         <div class="col-md-4 col-sm-4">
           <img src="http://lorempixel.com/300/300/">
         </div>
@@ -17,9 +16,34 @@
         </div>
         
         <div class="col-md-4 col-sm-4">
-          satıcı detayları
+          <p><strong>Satıcı Detayları</strong></p>
+          <table class="table table-striped">
+            <tr>
+              <td>E-Mail Adresi:</td>
+              <td><%= @notice.user.email %></td>
+            </tr>
+            <tr>
+              <td>Kullanıcı Adı:</td>
+              <td><%= @notice.user.profile.profile_name %></td>
+            </tr>
+            <tr>
+              <td>Telefon Numarası:</td>
+              <td><%= @notice.user.profile.phone_number %></td>
+            </tr>
+            <tr>
+              <td>Şehri:</td>
+              <td><%= @notice.user.profile.city %></td>
+            </tr>
+            <tr>
+              <td>İlçesi:</td>
+              <td><%= @notice.user.profile.town %></td>
+            </tr>
+            <tr>
+              <td>Adresi:</td>
+              <td><%= @notice.user.profile.address %></td>
+            </tr>
+          </table>
         </div>
-      </div>
     </div>
   </div>
 </div>
