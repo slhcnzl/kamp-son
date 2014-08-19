@@ -31,3 +31,10 @@ Notice.delete_all
 Notice.create(title: "Logitech HD Pro Webcam C920", message: lorem, user_id: User.find_by(email: "msdundars@gmail.com").id)
 Notice.create(title: "Mikado MD-V6S 2+1 Multimedia Speaker", message: lorem, user_id: User.find_by(email: "omfaer@bil.omu.edu.tr").id)
 Notice.create(title: "HP LaserJet Pro 400 Yazıcı M401dn", message: lorem, user_id: User.find_by(email: "msdundars@gmail.com").id)
+
+City.delete_all
+File.open("#{Rails.root}/db/cities.txt") do |cities|
+  cities.read.each_line do |city|
+    City.create!(:name => city.chomp)
+  end
+end

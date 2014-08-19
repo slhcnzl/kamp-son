@@ -1,0 +1,8 @@
+<%= simple_form_for(@profile) do |f| %>
+	<%= f.input :profile_name, label: "Profil Adınız (nickname)", placeholder: "Profil Adınız..." %>
+	<%= f.input :phone_number, label: "Telefon Numaranız", hint: "Telefon numaranızı başında sıfır olmadan yazınız." %>
+	<%= f.input :city, label: "Şehir", collection: City.all, label_method: :name, prompt: "İlinizi Seçiniz" %>
+	<%= f.input :town, label: "İlçe" %>
+	<%= f.input :address, label: "Adresiniz" %>
+	<%= f.button :submit, "Kaydet", :class => "btn btn-success" %>
+<% end %>

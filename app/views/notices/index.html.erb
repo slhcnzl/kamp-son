@@ -14,7 +14,7 @@
           <div class="notice">
             <strong><%= link_to notice.title, notice_path(notice) %></strong>
             <div class="meta">
-              <%= notice.user.full_name %> - <%= link_to time_ago_in_words(notice.created_at) + " önce", notice %>
+            	<%= link_to notice.user.full_name, profile_path(notice.user.profile) %> - <%= link_to time_ago_in_words(notice.created_at) + " önce", notice %>
               <% if user_signed_in? and (current_user == notice.user) %>
                 <span class="admin">
                   | <%= link_to 'Düzenle', edit_notice_path(notice) %> | 

@@ -44,6 +44,7 @@
             <ul class="dropdown-menu" role="menu">
               <% if user_signed_in? %>
                 <li><%= link_to "Şifremi Değiştir", update_path %></li>
+                <li><%= link_to "Profilimi Düzenle", edit_profile_path(current_user.profile) %></li>
                 <li class="divider"></li>
                 <li><%= link_to "Çıkış Yap", logout_path %></li>
               <% else %>

@@ -16,10 +16,10 @@ class User < ActiveRecord::Base
 
   def make_profile
     create_profile(
-      profile_name: "",
+      profile_name: UnicodeUtils.downcase(first_name.delete(' ')),
       phone_number: "",
-      city: "",
-      town: "",
+      city: "Samsun",
+      town: "Atakum",
       address: ""
     )
   end

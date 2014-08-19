@@ -8,8 +8,8 @@ class NoticesController < ApplicationController
     @notices = Notice.all
   end
 
-
   def show
+  	@uzem = "selam"
   end
 
   def new
