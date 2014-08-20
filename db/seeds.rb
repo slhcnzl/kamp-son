@@ -38,3 +38,11 @@ File.open("#{Rails.root}/db/cities.txt") do |cities|
     City.create!(:name => city.chomp)
   end
 end
+
+Category.delete_all
+Category.create(name: "İş İlanları")
+Category.create(name: "Ev Arkadaşı")
+Category.create(name: "Kiralık Ev")
+Category.create(name: "Ders Kitapları")
+Category.create(name: "Eşya")
+Category.create(name: "Diğer")

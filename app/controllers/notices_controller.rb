@@ -9,7 +9,10 @@ class NoticesController < ApplicationController
   end
 
   def show
-  	@uzem = "selam"
+  	@titles = []
+    @notice.categories.each do |category|
+     	@titles << category.name
+     end
   end
 
   def new
@@ -57,6 +60,6 @@ class NoticesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def notice_params
-      params.require(:notice).permit(:title, :message)
+      params.require(:notice).permit(:title, :message, :category_ids => [])
     end
 end

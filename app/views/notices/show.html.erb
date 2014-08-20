@@ -1,17 +1,24 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h4>
-     <%= @notice.title %>
+     <%= @notice.title %> -
+     <p></p>
+
+     	<%= @titles.to_sentence %>
+
+
+
+
      <p><i><small>İlan Tarihi: <%= @notice.created_at.strftime("%Y.%m.%d / %H:%M") %></small></i></p>
    </h4>
   </div>
   <div class="panel-body">
     <div class="row">
         <div class="col-md-4 col-sm-4">
-          <img src="http://lorempixel.com/300/300/">
+          <img src="http://lorempixel.com/200/200/">
         </div>
 
-        <div class="col-md-4 col-sm-4">
+        <div class="col-md-3 col-sm-3">
           <%= @notice.message %>
         </div>
         
