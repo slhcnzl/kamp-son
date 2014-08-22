@@ -78,6 +78,15 @@
               <td width="10px"><span class="glyphicon glyphicon-plus"></span></td>
               <td><%= link_to "Yeni İlan Ekle", new_notice_path %></td>
             </tr>
+
+            <% Category.all.each do |category| %>
+            <tr>
+              <td width="10px"><span class="glyphicon glyphicon-list"></span></td>
+              <td>             	
+                <%= link_to category.name, category %>
+              </td>
+            <tr>
+            <% end %>
           </table>
         </div>
       </div>

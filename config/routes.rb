@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :notices
   resources :profile, only: [:show, :edit, :update]
+  resources :categories, except: [:index, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

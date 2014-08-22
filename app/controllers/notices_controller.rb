@@ -5,7 +5,7 @@ class NoticesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @notices = Notice.all
+    @notices = Notice.paginate(:page => params[:page], :per_page => 5)
   end
 
   def show

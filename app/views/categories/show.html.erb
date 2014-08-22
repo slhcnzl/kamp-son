@@ -1,11 +1,11 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h4>
-     Yayındaki İlanlar
+     <strong><%= @category.name %></strong> Kategorisindeki İlanlar
    </h4>
   </div>
   <div class="panel-body">
-    <% @notices.each do |notice| %>
+    <% @category.notices.each do |notice| %>
       <div class="row">
         <div class="col-md-1 col-sm-1">
           <img src="http://lorempixel.com/50/50/">
@@ -15,19 +15,10 @@
             <strong><%= link_to notice.title, notice_path(notice) %></strong>
             <div class="meta">
             	<%= link_to notice.user.full_name, profile_path(notice.user.profile) %> - <%= link_to time_ago_in_words(notice.created_at) + " önce", notice %>
-              <% if user_signed_in? and (current_user == notice.user) %>
-                <span class="admin">
-                  | <%= link_to 'Düzenle', edit_notice_path(notice) %> | 
-                  <%= link_to "Sil", notice, method: :delete, data: { confirm: 'Are you sure?' } %>
-                </span>
-              <% end %>
             </div>
           </div>
         </div>
       </div>
     <% end %>
-  </div>
-  <div class="apple_pagination">
-      <%= will_paginate @notices %>
   </div>
 </div>

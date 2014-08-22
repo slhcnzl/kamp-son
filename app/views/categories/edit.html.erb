@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>
+     Yeni Kategori Oluştur
+   </h4>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="container">
+        <%= simple_form_for(@category) do |f| %>
+			<%= f.input :name, label: "Kategori Adı" %>
+			<%= f.button :submit, "Kaydet" %>
+		<% end %>
+      </div>
+    </div>
+    <hr \>
+    <div class="row">
+      <div class="container">
+        <%= link_to '<= Geri Dön', root_path, :class => "btn btn-sm btn-default" %>
+      </div>
+    </div>
+  </div>
+</div>

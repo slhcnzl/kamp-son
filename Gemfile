@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -35,6 +36,9 @@ group :development do
 end
 
 gem 'unicode_utils'
+
+gem 'will_paginate', '~> 3.0'
+gem 'carrierwave'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
