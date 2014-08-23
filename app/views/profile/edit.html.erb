@@ -1,9 +1,20 @@
-<%= simple_form_for(@profile, multipart: true) do |f| %>
-	<%= f.input :profile_name, label: "Profil Adınız (nickname)", placeholder: "Profil Adınız..." %>
-	<%= f.input :phone_number, label: "Telefon Numaranız", hint: "Telefon numaranızı başında sıfır olmadan yazınız." %>
-	<%= f.input :city, label: "Şehir", collection: City.all, label_method: :name, value_method: :name, prompt: "İlinizi Seçiniz" %>
-	<%= f.input :town, label: "İlçe" %>
-	<%= f.input :address, label: "Adresiniz" %>
-	<%= f.input :avatar %>
-	<%= f.button :submit, "Kaydet", :class => "btn btn-success" %>
-<% end %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>Profilimi Düzenle</h4>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <%= simple_form_for(@profile, multipart: true) do |f| %>
+          <%= f.input :profile_name, label: "Profil Adınız (nickname)", placeholder: "Profil Adınız..." %>
+          <%= f.input :phone_number, label: "Telefon Numaranız", hint: "Telefon numaranızı başında sıfır olmadan yazınız." %>
+          <%= f.input :city, label: "Şehir", collection: City.all, label_method: :name, value_method: :name, prompt: "İlinizi Seçiniz" %>
+          <%= f.input :town, label: "İlçe" %>
+          <%= f.input :address, label: "Adresiniz" %>
+          <%= f.input :avatar %>
+          <%= f.button :submit, "Kaydet", :class => "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

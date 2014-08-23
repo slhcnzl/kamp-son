@@ -1,43 +1,19 @@
-<h2>Şifremi Değiştir</h2>
-
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-<div class="container">
-  <table class="table table-hover">
-    <tr>
-      <td>
-        <%= f.input :email, :required => false, :autofocus => true, label: "E-mail Adresiniz" %>
-      </td>
-    </tr>
-    
-    <tr>
-      <td>
-        <%= f.input :password, :autocomplete => "off", :hint => "şifrenizi değiştirmek istemiyorsanız boş bırakınız", label:"Şifreniz", :required => false %>
-      </td>
-    </tr>
-    
-    <tr>
-      <td>
-        <%= f.input :password_confirmation, :required => false, label: "Şifreniz (tekrar)", :hint => "şifrenizi değiştirmek istemiyorsanız boş bırakınız" %>
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <%= f.input :current_password, :hint => "bilgilerinizi güncelleyebilmek için şuan kullandığınız şifrenizi yazmalısınız", :required => true, label:"Mevcut Şifreniz" %>
-      </td>
-    </tr>   
-
-    <tr>
-      <td>
-        <%= f.button :submit, "Hesabımı Güncelle", :class => "btn btn-sm btn-primary" %>
-      </td>
-    </tr>
-    
-    <tr>
-      <td>
-        <%= link_to "Hesabımı tamamen sil", registration_path(resource_name), :data => { :confirm => "Emin misiniz? Bu işlem geri alınamaz!" }, :method => :delete %> | <%= link_to "Geri Dön", :back %>
-      </td>
-    </tr>
-  </table>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>Hesabımı Düzenle</h4>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+          <%= f.input :email, :required => false, :autofocus => true, label: "E-mail Adresiniz" %>
+          <%= f.input :password, :autocomplete => "off", :hint => "şifrenizi değiştirmek istemiyorsanız boş bırakınız", label:"Şifreniz", :required => false %>
+          <%= f.input :password_confirmation, :required => false, label: "Şifreniz (tekrar)", :hint => "şifrenizi değiştirmek istemiyorsanız boş bırakınız" %>
+          <%= f.input :current_password, :hint => "bilgilerinizi güncelleyebilmek için şuan kullandığınız şifrenizi yazmalısınız", :required => true, label:"Mevcut Şifreniz" %>
+          <%= f.button :submit, "Hesabımı Güncelle", :class => "btn btn-sm btn-primary" %>
+          <p><%= link_to "Hesabımı tamamen sil", registration_path(resource_name), :data => { :confirm => "Emin misiniz? Bu işlem geri alınamaz!" }, :method => :delete %> | <%= link_to "Geri Dön", :back %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-<% end %>
