@@ -39,6 +39,7 @@ gem 'unicode_utils'
 
 gem 'will_paginate', '~> 3.0'
 gem 'carrierwave'
+gem "mini_magick"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

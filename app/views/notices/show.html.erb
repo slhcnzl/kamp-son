@@ -3,54 +3,49 @@
     <h4>
      <%= @notice.title %> -
      <p></p>
-
      	<%= @titles.to_sentence %>
-
-
-
-
      <p><i><small>İlan Tarihi: <%= @notice.created_at.strftime("%Y.%m.%d / %H:%M") %></small></i></p>
    </h4>
   </div>
   <div class="panel-body">
     <div class="row">
-        <div class="col-md-4 col-sm-4">
-          <img src="http://lorempixel.com/200/200/">
-        </div>
+      <div class="col-md-4 col-sm-4">
+        <%= has_a_picture %>
+      </div>
 
-        <div class="col-md-3 col-sm-3">
-          <%= @notice.message %>
-        </div>
-        
-        <div class="col-md-4 col-sm-4">
-          <p><strong>Satıcı Detayları</strong></p>
-          <table class="table table-striped">
-            <tr>
-              <td>E-Mail Adresi:</td>
-              <td><%= @notice.user.email %></td>
-            </tr>
-            <tr>
-              <td>Kullanıcı Adı:</td>
-              <td><%= @notice.user.profile.profile_name %></td>
-            </tr>
-            <tr>
-              <td>Telefon Numarası:</td>
-              <td><%= @notice.user.profile.phone_number %></td>
-            </tr>
-            <tr>
-              <td>Şehri:</td>
-              <td><%= @notice.user.profile.city %></td>
-            </tr>
-            <tr>
-              <td>İlçesi:</td>
-              <td><%= @notice.user.profile.town %></td>
-            </tr>
-            <tr>
-              <td>Adresi:</td>
-              <td><%= @notice.user.profile.address %></td>
-            </tr>
-          </table>
-        </div>
+      <div class="col-md-3 col-sm-3">
+        <%= @notice.message %>
+      </div>
+      
+      <div class="col-md-4 col-sm-4">
+        <p><strong>Satıcı Detayları</strong></p>
+        <table class="table table-striped">
+          <tr>
+            <td>E-Mail Adresi:</td>
+            <td><%= @notice.user.email %></td>
+          </tr>
+          <tr>
+            <td>Kullanıcı Adı:</td>
+            <td><%= @notice.user.profile.profile_name %></td>
+          </tr>
+          <tr>
+            <td>Telefon Numarası:</td>
+            <td><%= @notice.user.profile.phone_number %></td>
+          </tr>
+          <tr>
+            <td>Şehri:</td>
+            <td><%= @notice.user.profile.city %></td>
+          </tr>
+          <tr>
+            <td>İlçesi:</td>
+            <td><%= @notice.user.profile.town %></td>
+          </tr>
+          <tr>
+            <td>Adresi:</td>
+            <td><%= @notice.user.profile.address %></td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </div>

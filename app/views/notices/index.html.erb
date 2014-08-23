@@ -8,7 +8,7 @@
     <% @notices.each do |notice| %>
       <div class="row">
         <div class="col-md-1 col-sm-1">
-          <img src="http://lorempixel.com/50/50/">
+          <%= has_a_thumb(notice) %>
         </div>
         <div class="col-md-11 col-sm-11">
           <div class="notice">

@@ -11,7 +11,7 @@
           <%= f.input :city, label: "Şehir", collection: City.all, label_method: :name, value_method: :name, prompt: "İlinizi Seçiniz" %>
           <%= f.input :town, label: "İlçe" %>
           <%= f.input :address, label: "Adresiniz" %>
-          <%= f.input :avatar %>
+          <%= f.input :avatar, label: "Profil Fotoğrafınız" %>
           <%= f.button :submit, "Kaydet", :class => "btn btn-success" %>
         <% end %>
       </div>
