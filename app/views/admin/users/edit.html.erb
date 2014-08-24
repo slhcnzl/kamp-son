@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>
+      Kullanıcıyı Düzenle
+   </h4>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <%= simple_form_for(@user, url: admin_user_path(@user)) do |f| %>
+          <%= f.input :first_name, label: "Adı" %>  
+          <%= f.input :last_name, label: "Soyadı" %>
+          <%= f.input :email, label: "E-mail Adresi" %>
+          <%= f.button :submit, "Kaydet", class: "btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

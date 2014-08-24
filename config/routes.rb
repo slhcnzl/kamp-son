@@ -1,22 +1,26 @@
 Rails.application.routes.draw do
+
+  # Uygulama anasayfası
+  root 'notices#index'
+
+  # Devise Yolları
   devise_for :users
   devise_scope :user do
-	get 'register', to: 'devise/registrations#new', as: :register
-	get 'login', to: 'devise/sessions#new', as: :login
-	get 'update', to: 'devise/registrations#edit', as: :update
-	get 'logout', to: 'devise/sessions#destroy', as: :logout
-	get 'recover', to: 'devise/passwords#new', as: :recover
+    get 'register', to: 'devise/registrations#new', as: :register
+    get 'login', to: 'devise/sessions#new', as: :login
+    get 'update', to: 'devise/registrations#edit', as: :update
+    get 'logout', to: 'devise/sessions#destroy', as: :logout
+    get 'recover', to: 'devise/passwords#new', as: :recover
   end
 
   resources :notices
   resources :profile, only: [:show, :edit, :update]
   resources :categories, except: [:index, :destroy]
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  root 'notices#index'
+  get 'admin', to: 'admin/users#index'
+  namespace :admin do
+    resources :users, only: [:index, :edit, :update, :destroy]
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

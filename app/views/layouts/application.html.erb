@@ -43,6 +43,8 @@
             <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <% if user_signed_in? %>
+                <li><%= link_to "Yönetim Paneli", admin_path %></li>
+                <li class="divider"></li>
                 <li><%= link_to "Profilim & İlanlarım", profile_path(current_user.profile) %></li>
                 <li><%= link_to "Şifremi Değiştir", update_path %></li>
                 <li><%= link_to "Profilimi Düzenle", edit_profile_path(current_user.profile) %></li>
@@ -57,8 +59,6 @@
             </ul>
           </li>
         </ul>
-
-
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
@@ -97,6 +97,12 @@
                 </td>
               <tr>
             <% end %>
+              <tr>
+                <td width="10px"><span class="glyphicon glyphicon-plus"></span></td>
+                <td>              
+                  <%= link_to "Yeni Kategori Ekle", new_category_path %>
+                </td>
+              <tr>
           </table>
         </div>
       </div>
