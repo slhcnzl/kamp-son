@@ -97,12 +97,14 @@
                 </td>
               <tr>
             <% end %>
+            <% if current_user.is_admin? %>
               <tr>
                 <td width="10px"><span class="glyphicon glyphicon-plus"></span></td>
                 <td>              
                   <%= link_to "Yeni Kategori Ekle", new_category_path %>
                 </td>
               <tr>
+            <% end %>
           </table>
         </div>
       </div>

@@ -3,6 +3,7 @@
 class Admin::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :ensure_admin
 
   def index
     @users = User.paginate(page: params[:page], per_page: 15).order(first_name: :asc)
@@ -27,5 +28,9 @@ class Admin::UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :first_name, :last_name, :password, :password_confirmation)
+  end
+
+  def ensure_admin
+    redirect_to :root, :alert => "Yetkisiz erişim sağlamaya çalışıyorsunuz!" unless current_user.is_admin?
   end
 end

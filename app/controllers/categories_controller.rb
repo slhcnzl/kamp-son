@@ -3,6 +3,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update]
   before_action :authenticate_user!, except: [:show]
+  before_action :ensure_admin, only: [:edit, :update, :new, :create]
 
     def show
     end
@@ -39,5 +40,9 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit(:name)
+  end
+
+  def ensure_admin
+    redirect_to :root, :alert => "Yetkisiz erişim sağlamaya çalışıyorsunuz!" unless current_user.is_admin?
   end
 end

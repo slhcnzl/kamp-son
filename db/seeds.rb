@@ -24,7 +24,7 @@ tempus rutrum, nibh lacus hendrerit sem, non ullamcorper ipsum ipsum non lectus.
 quam sit amet tincidunt. Suspendisse potenti. Donec hendrerit suscipit velit, eu pulvinar tortor dictum eget."
 
 User.delete_all
-User.create(first_name: "Mustafa Serhat", last_name: "Dündar", email: "msdundars@gmail.com", password: "12345678")
+User.create(first_name: "Mustafa Serhat", last_name: "Dündar", email: "msdundars@gmail.com", password: "12345678", admin: true)
 User.create(first_name: "Ömer Faruk", last_name: "Er", email: "omfaer@bil.omu.edu.tr", password: "12345678")
 
 Notice.delete_all

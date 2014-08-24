@@ -9,7 +9,7 @@
       <div class="container">
         <%= simple_form_for(@category) do |f| %>
             <%= f.input :name, label: "Kategori Adı" %>
-            <p><%= f.button :submit, "Kaydet" %></p>
+            <p><%= f.button :submit, "Kaydet", :class => "btn btn-sm btn-success" %></p>
         <% end %>
       </div>
     </div>
