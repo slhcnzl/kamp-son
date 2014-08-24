@@ -11,6 +11,7 @@
           <%= f.input :first_name, label: "Adı" %>  
           <%= f.input :last_name, label: "Soyadı" %>
           <%= f.input :email, label: "E-mail Adresi" %>
+          <%= f.input :admin, inline_label: "Admin?", label: false %>
           <%= f.button :submit, "Kaydet", class: "btn-primary" %>
         <% end %>
       </div>

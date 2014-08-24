@@ -97,7 +97,7 @@
                 </td>
               <tr>
             <% end %>
-            <% if current_user.is_admin? %>
+            <% if user_signed_in? and current_user.is_admin? %>
               <tr>
                 <td width="10px"><span class="glyphicon glyphicon-plus"></span></td>
                 <td>              
